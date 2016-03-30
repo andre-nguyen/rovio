@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="rovio" type="rovio_rosbag_loader" name="rovio" output="screen">
+  <param name="filter_config" value="$(find rovio)/cfg/vn100/rovio_test.info"/>
+  <param name="camera0_config" value="$(find rovio)/cfg/vn100/rovio_cam0.yaml"/>
+  <param name="camera1_config" value="$(find rovio)/cfg/vn100/rovio_cam1.yaml"/>
+  <param name="rosbag_filename" value="/home/andre/Documents/elikos/bag/pinky/178_deg_lens/tour.bag"/>
+  <param name="imu_topic_name" value="/sync/imu/imu"/>
+  <param name="cam0_topic_name" value="/sync/cam0/image_raw"/>
+  <param name="cam1_topic_name" value="/sync/cam1/image_raw"/>
+  </node>
+</launch>

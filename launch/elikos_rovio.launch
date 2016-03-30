@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="rovio" type="rovio_node" name="rovio" output="screen">
+    <param name="filter_config" value="$(find rovio)/cfg/elikos/elikos.info"/>
+    <param name="camera0_config" value="$(find rovio)/cfg/elikos/elikos_cam0.yaml"/>
+    <param name="camera1_config" value="$(find rovio)/cfg/elikos/elikos_cam1.yaml"/>
+
+    <remap from="cam0/image_raw" to="/cam0/camera/image_raw" />
+    <remap from="cam1/image_raw" to="/cam1/camera/image_raw" />
+    <remap from="imu0" to="/mavros/imu/data" />
+  </node>
+</launch>

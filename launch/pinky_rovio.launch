@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="rovio" type="rovio_node" name="rovio" output="screen">
+    <param name="filter_config" value="$(find rovio)/cfg/pinky/120/pinky_test.info"/>
+    <param name="camera0_config" value="$(find rovio)/cfg/pinky/120/pinky_cam0.yaml"/>
+    <param name="camera1_config" value="$(find rovio)/cfg/pinky/120/pinky_cam1.yaml"/>
+
+    <remap from="cam0/image_raw" to="/sync/cam0/image_raw" />
+    <remap from="cam1/image_raw" to="/sync/cam1/image_raw" />
+    <remap from="imu0" to="/sync/imu/imu" />
+  </node>
+</launch>
